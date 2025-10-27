@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HelloController!{% endblock %}
+
+{% block body %}
+
+        {# interpolation #}
+ 
+
+{% for team in teams %}
+
+    {{team.name|capitalize}}  
+
+{% endfor %}
+
+
+
+
+ 
+
+
+{% endblock %}
