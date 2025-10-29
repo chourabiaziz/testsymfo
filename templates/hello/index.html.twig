@@ -7,14 +7,53 @@
         {# interpolation #}
  
 
-{% for team in teams %}
 
-    {{team.name|capitalize}}  
+<h1>Liste des membres de l'équipe</h1>
+<table border="1">
+<thead>
+    <th>id</th>
+    <th>name</th>
+    <th>actions</th>
+</thead>
+<tbody>
+<tr>
+    {% for team in teams %}
+    <tr>
+        <td>{{ team.id }}</td>
+        <td>{{ team.name }}</td>
+        <td>
+            <a href="/teams/{{team.id}}">voir</a>
+            <a href="/team/edit/{{team.id}}">modifier</a>
+            <a href="/teams/delete/{{team.id}}">supprimer</a>
+        
+        
+        </td>
+    </tr>
+    {% endfor %}
+</tr>
+</tbody>
 
-{% endfor %}
+
+</table>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<a href="/team/add">ajouter</a>
 
  
 

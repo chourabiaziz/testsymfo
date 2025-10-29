@@ -19,7 +19,7 @@ class Team
     private ?string $name = null;
 
   
-    #[ORM\OneToMany(targetEntity: Player::class, mappedBy: 'team')]
+    #[ORM\OneToMany(targetEntity: Player::class, mappedBy: 'team', cascade: ['remove'])]
     private Collection $players;
 
     public function __construct()
@@ -73,4 +73,13 @@ class Team
 
         return $this;
     }
+
+
+    public function __toString(): string
+    {
+        return $this->name;
+    }
+
+
+
 }

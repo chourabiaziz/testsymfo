@@ -16,20 +16,35 @@ class PlayerRepository extends ServiceEntityRepository
         parent::__construct($registry, Player::class);
     }
 
-//    /**
-//     * @return Player[] Returns an array of Player objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('p.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+
+    public function findbyshirtnumber(): array
+    {
+        return $this->createQueryBuilder('p')   // toutes les player
+          
+        
+        
+        
+            ->where('p.shirt_number > :valeur')
+            ->setParameter('valeur', 500)
+
+
+
+            ->orderBy('p.created_at', 'ASC') // trier par date de création croissante
+          //  ->orderBy('p.createdAt', 'DESC') // trier par date de création decroissante
+
+
+          
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+
+
+
+
+
 
 //    public function findOneBySomeField($value): ?Player
 //    {
